@@ -1,0 +1,16 @@
+LoadModule passenger_module /usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/ext/apache2/mod_passenger.so
+PassengerRoot /usr/lib/ruby/gems/1.8/gems/passenger-3.0.9
+PassengerRuby /usr/bin/ruby
+
+Listen 5000
+<VirtualHost *:5000>
+    RackAutoDetect On
+    DocumentRoot /path/to/tasseo/public
+    <Directory /path/to/tasseo>
+        Options None
+        AllowOverride None
+        Order allow,deny
+        allow from all
+    </Directory>
+</VirtualHost>
+
