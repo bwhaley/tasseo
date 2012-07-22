@@ -1,4 +1,4 @@
-require 'sinatra'
+require 'sinatra' 
 require 'rack-ssl-enforcer'
 require 'haml'
 require 'yaml'
@@ -7,7 +7,7 @@ module Tasseo
   class Application < Sinatra::Base
 
     configure do
-      enable :logging
+      disable :logging
       mime_type :js, 'text/javascript'
       use Rack::SslEnforcer if ENV['FORCE_HTTPS']
     end
